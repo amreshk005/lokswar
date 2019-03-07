@@ -25,10 +25,15 @@ from django.utils import timezone
 
 def top_news_list(request):
     queryset = list(TopNews.objects.all())
+    queryset0 = list(RecentNews.objects.all())
+    queryset1 = list(PopluarPostNews.objects.all())
 
 
     context = {
-        'queryset':queryset
+        'queryset':queryset,
+        'queryset0':queryset0,
+        'queryset1':queryset1,
+
     }
 
     return render(request, "home_list.html",context)

@@ -225,7 +225,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="section-heading">
-                            <h6>Popular News</h6>
+                            <h6></h6>
                         </div>
     
                         <div class="row">
@@ -310,43 +310,22 @@
     
                     <div class="col-12 col-lg-4">
                         <div class="section-heading">
-                            <h6>Info</h6>
+                            <h6>ताज़ा ख़बरें</h6>
                         </div>
                         <!-- Popular News Widget -->
                         <div class="popular-news-widget mb-30">
-                            <h3>4 Most Popular News</h3>
-    
+                            
+                            {% for item in queryset0|slice:"1:" %}
                             <!-- Single Popular Blog -->
                             <div class="single-popular-post">
                                 <a href="#">
-                                    <h6><span>1.</span> Amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales.</h6>
+                                    <h6><span></span><span></span>{{ item.title }}</h6>
                                 </a>
-                                <p>April 14, 2018</p>
+                                <p>{{ item.date }}</p>
                             </div>
     
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-    
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-    
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
+                            {% endfor %}
+                         
                         </div>
     
                         <!-- Newsletter Widget -->
