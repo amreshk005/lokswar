@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import TopNews,RecentNews,PopluarPostNews,VideoNews
-from django.views.generic import ListView,DeleteView
+from django.views.generic import ListView,DetailView
 from django.utils import timezone
 
 # class HomeListView(ListView):
@@ -27,14 +27,37 @@ def top_news_list(request):
     queryset = list(TopNews.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
+    queryset2 = list(VideoNews.objects.all())
 
-
+   
     context = {
         'queryset':queryset,
         'queryset0':queryset0,
         'queryset1':queryset1,
+        'queryset2':queryset2,
 
     }
 
     return render(request, "home_list.html",context)
+
+
+# class TopNewsDetail(DetailView):
+#     model = TopNews
+
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['queryset'] = 
+
+
+def product_detail_view(request,pk=None,**kwargs):
+    querset = Product.objects.all()
+    isinstance 
+
+
+
+
+
+
+
 
