@@ -51,9 +51,12 @@ def top_news_list(request):
 
 
 def product_detail_view(request,pk=None,**kwargs):
-    querset = Product.objects.all()
-    isinstance 
-
+    querset = TopNews.objects.all()
+    isinstance = get_object_or_404(Product, pk=pk)
+    context = {
+        'oject_detail':queryset
+    }
+    return render(request, "top_detail.html",context)
 
 
 
