@@ -1,0 +1,20 @@
+{% extends 'detail.html' %}
+{% block detail %}
+<div class="single-blog-post featured-post single-post">
+    <div class="post-thumb">
+        <img src="{{ detail.image.url }}" alt="">
+    </div>
+    <div class="post-data">
+   
+            <h3>{{ detail.title }}</h3>
+
+        <div class="post-meta">
+            <p class="post-author">By <a href="#">{{ detail.author }}</a></p>
+            <p>{{ detail.description }}</p>
+            <p>{{ detail.date }}</p>
+
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

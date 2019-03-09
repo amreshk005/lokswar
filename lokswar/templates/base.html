@@ -25,13 +25,7 @@
     <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
 
-   
-    
-
-    <STYLE>
-    .post-title{text-decoration: none;} 
-    </STYLE>
-
+  
 </head>
 
 <body>
@@ -47,7 +41,7 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="{% static 'img/core-img/thelokswar.png' %}" alt=""></a>
+                                <a href="{% url 'home:list' %}"><img src="{% static 'img/core-img/thelokswar.png' %}" alt=""></a>
                             </div>
 
                             <!-- Login Search Area -->
@@ -80,7 +74,7 @@
 
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="{% static 'img/core-img/thelokswar.png' %}" alt=""></a>
+                            <a href="{% url 'home:list' %}"><img src="{% static 'img/core-img/thelokswar.png' %}" alt=""></a>
                         </div>
 
                         <!-- Navbar Toggler -->
@@ -99,54 +93,54 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
+                                    <li class="active"><a href="{% url 'home:list' %}">Home</a></li>
+                                    <!-- <li><a href="#">Pages</a> -->
+                                        <!-- <ul class="dropdown">
                                             <li><a href="index.html">Home</a></li>
                                             <li><a href="catagories-post.html">Catagories</a></li>
                                             <li><a href="single-post.html">Single Articles</a></li>
                                             <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
+                                            <li><a href="contact.html">Contact</a></li> -->
+                                            <!-- <li><a href="#">Dropdown</a> -->
+                                                <!-- <ul class="dropdown">
                                                     <li><a href="index.html">Home</a></li>
                                                     <li><a href="catagories-post.html">Catagories</a></li>
                                                     <li><a href="single-post.html">Single Articles</a></li>
                                                     <li><a href="about.html">About Us</a></li>
                                                     <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Mega Menu</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
+                                                </ul> -->
+                                            <!-- </li> -->
+                                        <!-- </ul> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a href="#">Mega Menu</a> -->
+                                        <!-- <div class="megamenu"> -->
+                                            <!-- <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagories</li>
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="catagories-post.html">Catagories</a></li>
                                                 <li><a href="single-post.html">Single Articles</a></li>
                                                 <li><a href="about.html">About Us</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
+                                            </ul> -->
+                                            <!-- <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagories</li>
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="catagories-post.html">Catagories</a></li>
                                                 <li><a href="single-post.html">Single Articles</a></li>
                                                 <li><a href="about.html">About Us</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
+                                            </ul> -->
+                                            <!-- <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagories</li>
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="catagories-post.html">Catagories</a></li>
                                                 <li><a href="single-post.html">Single Articles</a></li>
                                                 <li><a href="about.html">About Us</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <div class="single-mega cn-col-4">
+                                            </ul> -->
+                                            <!-- <div class="single-mega cn-col-4"> -->
                                                 <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
+                                                <!-- <div class="single-blog-post small-featured-post d-flex">
                                                     <div class="post-thumb">
                                                         <a href="#"><img src="{% static 'img/bg-img/23.jpg' %}" alt=""></a>
                                                     </div>
@@ -159,10 +153,10 @@
                                                             <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                 <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
+                                                <!-- <div class="single-blog-post small-featured-post d-flex">
                                                     <div class="post-thumb">
                                                         <a href="#"><img src="{% static 'img/bg-img/24.jpg' %}" alt=""></a>
                                                     </div>
@@ -175,18 +169,18 @@
                                                             <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Politics</a></li>
-                                    <li><a href="#">Breaking News</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Technology</a></li>
-                                    <li><a href="#">Health</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Sports</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                                </div> -->
+                                            <!-- </div>
+                                        </div> -->
+                                    <!-- </li> -->
+                                    <li><a href="{% url 'home:news' %}">न्यूज़ </a></li>
+                                    <li><a href="{% url 'home:politics' %}">राजनीति </a></li>
+                                    <li><a href="{%  url 'home:sports' %}">खेल </a></li>
+                                    <li><a href="{% url 'home:movie' %}">मनोरंजन </a></li>
+                                    <li><a href="{% url 'home:business' %}">व्यापार </a></li>
+                                    <li><a href="{% url 'home:election' %}">चुनाव 2019</a></li>
+                                    <li><a href="{% url 'home:country' %}">देश</a></li>
+                                    
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -197,6 +191,55 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
+
+        <!-- ##### Hero Area Start ##### -->
+        <div class="hero-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8">
+                        <!-- Breaking News Widget -->
+                        <div class="breaking-news-area d-flex align-items-center">
+                            <div class="news-title">
+                                <p>ताज़ा ख़बरें </p>
+                            </div>
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    {% for item in queryset1|slice:"-1:-4:-1" %}
+                                    {% if item.featured == True %}
+                                    <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Breaking News Widget -->
+                        <div class="breaking-news-area d-flex align-items-center mt-15">
+                            <div class="news-title title2">
+                                <p>बड़ी ख़बरें </p>
+                            </div>
+                            <div id="internationalTicker" class="ticker">
+                                <ul>
+                                        {% for item in queryset0|slice:"-1:-4:-1" %}
+                                        {% if item.featured == True %}
+                                        <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Hero Add -->
+                    <div class="col-12 col-lg-4">
+                        <div class="hero-add">
+                            <a href="#"><img src="{% static 'img/bg-img/hero-add.gif' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ##### Hero Area End ##### -->
 
     {% block content %}
     {% endblock %}
@@ -228,7 +271,7 @@
                         <div class="footer-widget-area mt-80">
                             <!-- Footer Logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                                <a href="index.html"><img style="margin-left:-20px;" src="{% static 'img/core-img/bottom_logo.png' %}" alt=""></a>
                             </div>
                             <!-- List -->
                             <ul class="list">

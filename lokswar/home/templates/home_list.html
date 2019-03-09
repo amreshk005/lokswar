@@ -2,54 +2,6 @@
     {% load static %}
     {% block content %}
 
-        <!-- ##### Hero Area Start ##### -->
-        <div class="hero-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-8">
-                        <!-- Breaking News Widget -->
-                        <div class="breaking-news-area d-flex align-items-center">
-                            <div class="news-title">
-                                <p>ताज़ा ख़बरें </p>
-                            </div>
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    {% for item in queryset1|slice:"-1:-4:-1" %}
-                                    {% if item.featured == True %}
-                                    <li><a href="#">{{ item.title }}</a></li>
-                                    {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-    
-                        <!-- Breaking News Widget -->
-                        <div class="breaking-news-area d-flex align-items-center mt-15">
-                            <div class="news-title title2">
-                                <p>बड़ी ख़बरें </p>
-                            </div>
-                            <div id="internationalTicker" class="ticker">
-                                <ul>
-                                        {% for item in queryset0|slice:"-1:-4:-1" %}
-                                        {% if item.featured == True %}
-                                        <li><a href="#">{{ item.title }}</a></li>
-                                        {% endif %}
-                                        {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Hero Add -->
-                    <div class="col-12 col-lg-4">
-                        <div class="hero-add">
-                            <a href="#"><img src="{% static 'img/bg-img/hero-add.gif' %}" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ##### Hero Area End ##### -->
     
         <!-- ##### Featured Post Area Start ##### -->
         <div class="featured-post-area">
@@ -62,16 +14,18 @@
                             <div class="col-12 col-lg-7">
                                 <div class="single-blog-post featured-post">
                                     <div class="post-thumb">
+                                        {% if item.image %}
                                         <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                    {% endif %}
                                     </div>
                                     <div class="post-data">
                                         
                                         <a href="{{ item.get_absolute_url }}" class="post-title">
-                                            <h6>{{ item.title }}</h6>
+                                            <h3>{{ item.title }}</h3>
                                         </a>
                                         <div class="post-meta">
                                             <p class="post-author">By {{ item.author }}</p>
-                                            <p class="post-excerp">{{ item.description }}</p>
+                                            <p class="post-excerp">{{ item.description|truncatewords:180 }}</p>
                                             <!-- Post Like & Post Comment -->
                                             <p class="post-date"><span>{{ item.date }}</span></p>
                                         </div>
@@ -81,15 +35,17 @@
                             {% endfor %}
                             <div class="col-12 col-lg-5">
                                 <!-- Single Featured Post -->
-                                {% for item in queryset|slice:"-2:-1"%}
+                                {% for item in queryset|slice:"-2:-5:-1"%}
                                 <div class="single-blog-post featured-post-2">
                                     <div class="post-thumb">
-                                        <a href="#"><img src="{{ item.image.url }}" alt=""></a>
+                                        {% if item.image %}
+                                        <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                    {% endif %}
                                     </div>
                                     <div class="post-data">
-                                        <a href="#" class="post-catagory">Finance</a>
+                                        <!-- <a href="" class="post-catagory">Finance</a> -->
                                         <div class="post-meta">
-                                            <a href="#" class="post-title">
+                                            <a href="{{ item.get_absolute_url }}" class="post-title">
                                                 <h6>{{ item.title }}</h6>
                                             </a>
                                             <!-- Post Like & Post Comment -->
@@ -99,124 +55,116 @@
                                 </div>
                                 {% endfor %}
     
-                                <!-- Single Featured Post -->
-                                {% for item in queryset|slice:":-2"%}
-                                <div class="single-blog-post featured-post-2">
-                                    <div class="post-thumb">
-                                        <a href="#"><img src="{{ item.image.url }}" alt=""></a>
-                                    </div>
-                                    <div class="post-data">
-                                        <a href="#" class="post-catagory">Finance</a>
-                                        <div class="post-meta">
-                                            <a href="#" class="post-title">
-                                                <h6>{{ item.title }}</h6>
-                                            </a>
-                                            <!-- Post Like & Post Comment -->
-                                            <p class="post-date"><span>{{ item.date }}</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
                             </div>
                         </div>
                     </div>
     
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Single Featured Post -->
+                        {% for item in queryset3 %}
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
+                                <a href="{% url 'home:news' %}" class="post-catagory">न्यूज़ </a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                    <a href="{{ item.get_absolute_url }}" class="post-title">
+                                        <h6>{{ item.title }}</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        {% endfor %}
+
+                        {% for item in queryset4 %}
                         <!-- Single Featured Post -->
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Politics</a>
+                                <a href="{% url 'home:politics' %}" class="post-catagory">राजनीति </a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
+                                    <a href="{{ item.get_absolute_url }}" class="post-title">
                                         <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        {% endfor %}
+
+                        {% for item in queryset5 %}
                         <!-- Single Featured Post -->
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Health</a>
+                                <a href="{% url 'home:movie' %}" class="post-catagory">मनोरंजन </a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                    <a href="{{ item.get_absolute_url }}" class="post-title">
+                                        <h6>{{ item.title }}</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        {% endfor %}
+
+                        {% for item in queryset6 %}
                         <!-- Single Featured Post -->
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
+                                <a href="{% url 'home:sports' %}" class="post-catagory">खेल </a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                    <a href="{{ item.get_absolute_url }}" class="post-title">
+                                        <h6>{{ item.title }}</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        {% endfor %}
+                        {% for item in queryset7 %}
                         <!-- Single Featured Post -->
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Travel</a>
+                                <a href="{% url 'home:election' %}" class="post-catagory">चुनाव 2019</a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                    <a href="{{ item.get_absolute_url }}" class="post-title">
+                                        <h6>{{ item.title }}</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
-    
+                        {% endfor %}
+                        {% for item in queryset8 %}
                         <!-- Single Featured Post -->
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">Politics</a>
+                                <a href="{% url 'home:business' %}" class="post-catagory">व्यापार </a>
                                 <div class="post-meta">
-                                    <a href="#" class="post-title">
-                                        <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                    <a href="{{ item.get_absloute_url }}" class="post-title">
+                                        <h6>{{ item.title }}</h6>
                                     </a>
-                                    <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                    <p>{{ item.date }}</p>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -240,11 +188,13 @@
                             <div class="col-12 col-md-6">
                                 <div class="single-blog-post style-3">
                                     <div class="post-thumb">
-                                        <a href="#"><img src="{{ item.image.url }}" alt=""></a>
+                                        {% if item.image %}
+                                        <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                    {% endif %}
                                     </div>
                                     <div class="post-data">
-                                        <a href="#" class="post-catagory">Finance</a>
-                                        <a href="#" class="post-title">
+                                        <!-- <a href="#" class="post-catagory">Finance</a> -->
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
                                         </a>
                                         <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
@@ -267,7 +217,7 @@
                             {% for item in queryset0|slice:"-1:-6:-1" %}
                             <!-- Single Popular Blog -->
                             <div class="single-popular-post">
-                                <a href="#">
+                                <a href="{{ item.get_absolute_url }}">
                                     <h6><span></span><span></span>{{ item.title }}</h6>
                                 </a>
                                 <p>{{ item.date }}</p>
@@ -290,9 +240,11 @@
                 <div class="row justify-content-center">
 
                     <!-- Single Video Post -->
+
                     {% for item in queryset2|slice:"-1:-3:-1" %}
                     <div class="col-12 col-sm-6 col-md-6">
                         <div class="single-video-post">
+
                             <img src="{% static 'img/bg-img/video1.jpg' %}" alt="">
                             <!-- Video Button -->
                             <div class="videobtn">
@@ -326,10 +278,12 @@
                             <div class="col-12 col-lg-4">
                                 <div class="single-blog-post">
                                     <div class="post-thumb">
-                                        <a href="#"><img src="{{ item.image.url }}" alt=""></a>
+                                        {% if item.image %}
+                                        <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                    {% endif %}
                                     </div>
                                     <div class="post-data">
-                                        <a href="#" class="post-title">
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
                                         </a>
                                         <p>{{ item.date }}</p>

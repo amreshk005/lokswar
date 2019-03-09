@@ -1060,7 +1060,9 @@ textarea:focus {
     position: relative;
     z-index: 1; }
     .footer-area .footer-widget-area .footer-logo {
-      margin-bottom: 30px; }
+     
+      margin-bottom: 30px;
+      margin-left: -20px; }
     .footer-area .footer-widget-area .widget-title {
       display: block;
       margin-bottom: 30px;
