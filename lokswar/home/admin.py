@@ -7,13 +7,13 @@ from .models import TopNews,RecentNews,PopluarPostNews,VideoNews
 
 
 class TopNewsAdmin(admin.ModelAdmin):
-    fields = ['title','description','image','author','date','featured']
-
+    fields = ['title','slug','description','image','author','date','featured']
+    
 class RecentNewsAdmin(admin.ModelAdmin):
-    fields = ['title','description','image','author','date','featured']
+    fields = ['title','slug','description','image','author','date','featured']
 
 class PopluarPostNewsAdmin(admin.ModelAdmin):
-    fields = ['title','description','image','author','date','featured']
+    fields = ['title','slug','description','image','author','date','featured']
 
 class VideoNewsAdmin(admin.ModelAdmin):
     fields = ['title','url']

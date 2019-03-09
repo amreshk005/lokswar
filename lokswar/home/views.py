@@ -1,26 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import TopNews,RecentNews,PopluarPostNews,VideoNews
 from django.views.generic import ListView,DetailView
 from django.utils import timezone
+from django.http import HttpResponse, Http404
 
-# class HomeListView(ListView):
-#     queryset = TopNews.objects.all()
-#     queryset0 = RecentNews.objects.all()
-#     queryset1 = PopluarPostNews.objects.all()
-#     queryset2 = VideoNews.objects.all()
-    
-    
-#     template_name = 'home_list.html'
-#     def get_context_data(self,*args, **kwargs):
-#         context = super(HomeListView, self).get_context_data(*args,**kwargs)
-#         context['queryset']=self.queryset
-#         context['queryset0']=self.queryset0
-#         context['queryset1']=self.queryset1
-#         context['queryset2']=self.queryset2
-        
-
-
-#         return context
 
 
 def top_news_list(request):
@@ -40,27 +23,44 @@ def top_news_list(request):
 
     return render(request, "home_list.html",context)
 
+    
 
 # class TopNewsDetail(DetailView):
-#     model = TopNews
+    
+#     template_name = 'top_detail.html'
+#     def get_object(self):
+
+#         return get_object_or_404(TopNews, slug=self.kwargs.get('slug', None))
 
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['queryset'] = 
+def top_news_detail(request, slug):
+    detail = get_object_or_404(TopNews, slug=slug)
+
+   
 
 
-def product_detail_view(request,pk=None,**kwargs):
-    querset = TopNews.objects.all()
-    isinstance = get_object_or_404(Product, pk=pk)
     context = {
-        'oject_detail':queryset
+        'detail':detail,
+        
+ }
+    return render(request,'top_detail.html',context)
+
+def recent_news_detail(request, slug):
+    detail0 = get_object_or_404(RecentNews, slug=slug)
+
+
+    context = {
+        'detail0':detail0,
+
     }
-    return render(request, "top_detail.html",context)
+    return render(request,'top_detail.html', context)
 
 
+def popular_news_detail(request,slug):
+    detail1 = get_object_or_404(PopluarPostNews, slug=slug)
 
+    context = {
+        'detail1':detail1,
+    }
 
-
-
-
+    return render(request,'top_detail.html', context)
