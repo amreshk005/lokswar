@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # our app
     "home",
+
+    # third party
+  
     
 
 

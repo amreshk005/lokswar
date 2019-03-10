@@ -67,151 +67,133 @@
 
                         <!-- Latest Posts Widget -->
                         <div class="latest-posts-widget mb-50">
-
+                            {% for item in queryset3 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                    <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
+                                    <a href="{% url 'home:news' %}" class="post-catagory">Finance</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
+                                            <h6>{{ item.title }}</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p class="post-date">{{ item.date }}</p>
                                     </div>
                                 </div>
                             </div>
-
+                            {% endfor %}
+                            
+                            {% for item in queryset4 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                    <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Politics</a>
+                                    <a href="{% url 'home:politics' %}" class="post-catagory">Politics</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p>{{ item.date }}</p>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
 
+                            {% for item in queryset5 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                    <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Health</a>
+                                    <a href="{% url 'home:movie' %}" class="post-catagory">Health</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                        <a href="{{ item.get_absloute_url }}" class="post-title">
+                                            <h6>{{ item.title }}</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p>{{ item.date }}</p>
                                     </div>
                                 </div>
                             </div>
-
+                            {% endfor %}
+                            {% for item in queryset6 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
+                                    <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
+                                    <a href="{% url 'home:sports' %}" class="post-catagory">Finance</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                        <a href="{{ item.get_absloute_url }}" class="post-title">
+                                            <h6>{{ item.title }}</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p>{{ item.title }}</p>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
 
+                            {% for item in queryset7 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
+                                    <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Travel</a>
+                                    <a href="{% url 'home:election' %}" class="post-catagory">Travel</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                        <a href="{{ item.get_absloute_url }}" class="post-title">
+                                            <h6>{{ item.title }}</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p>{{ item.title }}</p>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
 
+                            {% for item in queryset8 %}
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
+                                    <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Politics</a>
+                                    <a href="{% url 'home:business' %}" class="post-catagory">Politics</a>
                                     <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
+                                            <h6>{{ item.title }}</h6>
                                         </a>
-                                        <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                        <p>{{ item.date }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        {% endfor %}
                         <!-- Popular News Widget -->
                         <div class="popular-news-widget mb-50">
-                            <h3>4 Most Popular News</h3>
+                            <h3>ताज़ा ख़बरें </h3>
 
+                            {% for item in queryset0|slice:"-1:-6:-1" %}
                             <!-- Single Popular Blog -->
                             <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>1.</span> Amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales.</h6>
+                                <a href="{{ item.get_absolute_url }}">
+                                    <h6><span></span><span></span>{{ item.title }}</h6>
                                 </a>
-                                <p>April 14, 2018</p>
+                                <p>{{ item.date }}</p>
+                            </div>
+    
+                            {% endfor %}
                             </div>
 
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
+                          
 
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
+                       
 
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-                        </div>
-
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget mb-50">
-                            <h4>Newsletter</h4>
-                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
 
                         <!-- Latest Comments Widget -->
                         <div class="latest-comments-widget">

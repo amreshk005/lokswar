@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import UserManager
 from django.db.models.signals import pre_save, post_save
 from .utils import unique_slug_generator
+from django.utils import timezone
 # 
 
 
@@ -17,7 +18,7 @@ class TopNews(models.Model):
     featured = models.BooleanField(default=None,null=True)
 
     
-
+ 
     def get_absolute_url(self):
         return reverse("home:topnews",kwargs={'slug':self.slug})
 
@@ -225,6 +226,24 @@ class Country(models.Model):
         return self.title
 
 
+class Individual(models.Model):
+    title = models.CharField(max_length=120,null=False)
+    slug = models.SlugField(blank=True,null=True,unique=True,default=None)
+    description = models.TextField(null=False)
+    image = models.ImageField(upload_to='lokswar/',null=False,blank=False,default="default.jpg")
+    author = models.CharField(max_length=90,null=False,default=None)
+    date = models.DateTimeField(default=None,blank=True)
+    featured = models.BooleanField(default=None,null=True)    
+
+
+    def get_absolute_url(self):
+        return reverse("home:individual_detail",kwargs={'slug':self.slug})
+
+    def __str__(self):
+        return self.title
+
+
+    
 
 
 

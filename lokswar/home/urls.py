@@ -23,6 +23,9 @@ urlpatterns = [
     path('business_detail/<slug>/',views.business_detail,name='business_detail'),
     path('election_detail/<slug>/',views.election_detail,name='election_detail'),
     path('country_detail/<slug>/',views.country_detail,name='country_detail'),
+    path('individual_detail/<slug>/',views.individual_detail,name='individual_detail'),
+
+  
 
 
 

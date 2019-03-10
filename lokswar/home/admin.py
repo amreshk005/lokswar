@@ -14,6 +14,8 @@ from .models import (
     VideoNews,
     RecentNews,
     PopluarPostNews,
+    Individual,
+
    
 
 )
@@ -71,6 +73,12 @@ class BusinessAdmin(admin.ModelAdmin):
     list_display = ['__str__','slug'] 
 
 @admin.register(Country)
+class BusinessAdmin(admin.ModelAdmin):
+    fields = ['title','slug','description','image','author','date','featured']
+    list_display = ['__str__','slug']    
+
+
+@admin.register(Individual)
 class BusinessAdmin(admin.ModelAdmin):
     fields = ['title','slug','description','image','author','date','featured']
     list_display = ['__str__','slug']    
