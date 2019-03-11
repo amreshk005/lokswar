@@ -13,7 +13,7 @@
                         <div class="single-blog-post featured-post mb-30">
                             <div class="post-thumb">
                                 {% if item.image %}
-                                <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                <a href="{{ item.get_absolute_url }}"><img style="height:295px; width:600px;" src="{{ item.image.url }}" alt=""></a>
                             {% endif %}
                             </div>
                             <div class="post-data">
@@ -74,7 +74,7 @@
                                     <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:news' %}" class="post-catagory">Finance</a>
+                                    <a href="{% url 'home:news' %}" class="post-catagory">न्यूज़</a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
@@ -92,7 +92,7 @@
                                     <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:politics' %}" class="post-catagory">Politics</a>
+                                    <a href="{% url 'home:politics' %}" class="post-catagory">राजनीति </a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
@@ -110,7 +110,7 @@
                                     <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:movie' %}" class="post-catagory">Health</a>
+                                    <a href="{% url 'home:movie' %}" class="post-catagory">मनोरंजन </a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absloute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
@@ -127,7 +127,7 @@
                                     <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:sports' %}" class="post-catagory">Finance</a>
+                                    <a href="{% url 'home:sports' %}" class="post-catagory">खेल</a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absloute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
@@ -145,7 +145,7 @@
                                     <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:election' %}" class="post-catagory">Travel</a>
+                                    <a href="{% url 'home:election' %}" class="post-catagory">चुनाव 2019</a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absloute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
@@ -163,7 +163,7 @@
                                     <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:business' %}" class="post-catagory">Politics</a>
+                                    <a href="{% url 'home:business' %}" class="post-catagory">व्यापार</a>
                                     <div class="post-meta">
                                         <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
@@ -196,11 +196,11 @@
 
 
                         <!-- Latest Comments Widget -->
-                        <div class="latest-comments-widget">
-                            <h3>Latest Comments</h3>
+                        <!-- <div class="latest-comments-widget">
+                            <h3>Latest Comments</h3> -->
 
                             <!-- Single Comments -->
-                            <div class="single-comments d-flex">
+                            <!-- <div class="single-comments d-flex">
                                 <div class="comments-thumbnail mr-15">
                                     <img src="img/bg-img/29.jpg" alt="">
                                 </div>
@@ -208,10 +208,10 @@
                                     <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
                                     <p>06:34 am, April 14, 2018</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Single Comments -->
-                            <div class="single-comments d-flex">
+                            <!-- <div class="single-comments d-flex">
                                 <div class="comments-thumbnail mr-15">
                                     <img src="img/bg-img/30.jpg" alt="">
                                 </div>
@@ -219,10 +219,10 @@
                                     <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
                                     <p>06:34 am, April 14, 2018</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Single Comments -->
-                            <div class="single-comments d-flex">
+                            <!-- <div class="single-comments d-flex">
                                 <div class="comments-thumbnail mr-15">
                                     <img src="img/bg-img/31.jpg" alt="">
                                 </div>
@@ -230,10 +230,10 @@
                                     <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
                                     <p>06:34 am, April 14, 2018</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Single Comments -->
-                            <div class="single-comments d-flex">
+                            <!-- <div class="single-comments d-flex">
                                 <div class="comments-thumbnail mr-15">
                                     <img src="img/bg-img/32.jpg" alt="">
                                 </div>
@@ -242,7 +242,7 @@
                                     <p>06:34 am, April 14, 2018</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
