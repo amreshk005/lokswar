@@ -25,7 +25,7 @@ SECRET_KEY = 'la^47y13r%soj0u!4$13^r7z(0k_o@a=3j3e4rikfrxc0-1mmp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','www.thelokswar.com','thelokswar.com','thelokswar']
+ALLOWED_HOSTS = ['139.59.71.21','127.0.0.1','www.thelokswar.com','thelokswar.com','thelokswar']
 
 
 # Application definition
