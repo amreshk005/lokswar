@@ -14,9 +14,12 @@
                 <a class="a2a_button_whatsapp"></a>
                 </div>             
         <div class="post-meta">
-            <p class="post-author">By <a href="#">{{ detail2.author }}</a></p>
-            {{ detail2.description|linebreaks|force_escape }}
-            <p>{{ detail2.date }}</p>
+            <p class="post-author">By {{ detail2.author }}</p>
+            
+           <p> {{ detail2.description|linebreaks }}
+        </p>
+        <p>{{ detail2.date }}</p>
+           
 
             
         </div>
