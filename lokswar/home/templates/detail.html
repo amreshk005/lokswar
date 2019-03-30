@@ -36,11 +36,11 @@
                             <div class="col-12 col-md-6">
                                 <div class="single-blog-post style-3 mb-80">
                                     <div class="post-thumb">
-                                        <a href="{{ get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                        <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
                                     </div>
                                     <div class="post-data">
                                         
-                                        <a href="{{ get_absolute_url }}" class="post-title">
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
                                         </a>
                                     <!-- AddToAny BEGIN -->
