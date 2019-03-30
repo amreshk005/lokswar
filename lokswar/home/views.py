@@ -76,7 +76,7 @@ def news_list(request):
     queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
     page = request.GET.get('page',1)
 
-    paginator = Paginator(news, 2)
+    paginator = Paginator(news[::-1], 2)
 
     try:
         news_list = paginator.page(page)
