@@ -65,7 +65,7 @@ def top_news_list(request):
 
 #cateogory == news
 def news_list(request):
-    news = News.objects.all().order_by('-id')
+    news = list(News.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -105,7 +105,7 @@ def news_list(request):
 # cateogory == raajniti
 
 def politics_list(request):
-    news = Politics.objects.all().order_by('-id')
+    news = list(Politics.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -144,7 +144,7 @@ def politics_list(request):
 # cateogory == sports
 
 def sports_list(request):
-    news = Sport.objects.all().order_by('-id')
+    news = list(Sport.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -183,7 +183,7 @@ def sports_list(request):
 # category == manoranjan
 
 def movie_list(request):
-    news = Movie.objects.all().order_by('-id')
+    news = list(Movie.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -221,7 +221,7 @@ def movie_list(request):
 # category == vayaapar
 
 def business_list(request):
-    news = Business.objects.all().order_by('-id')
+    news = list(Business.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -260,7 +260,7 @@ def business_list(request):
 # category == Election
 
 def election_list(request):
-    news = Election.objects.all().order_by('-id')
+    news = list(Election.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -300,7 +300,7 @@ def election_list(request):
 # category == country
 
 def country_list(request):
-    news = Country.objects.all().order_by('-id')
+    news = list(Country.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
