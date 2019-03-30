@@ -87,7 +87,7 @@
     
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Single Featured Post -->
-                        {% for item in queryset3 %}
+                        {% for item in queryset3 reversed  %}
                         <div class="single-blog-post small-featured-post d-flex">
                             <div class="post-thumb">
                                 <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>

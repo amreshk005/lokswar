@@ -31,12 +31,12 @@ def top_news_list(request):
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset2 = list(VideoNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     queryset9 = list(Individual.objects.all())
   
 
@@ -68,12 +68,12 @@ def news_list(request):
     news = list(News.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -108,12 +108,12 @@ def politics_list(request):
     news = list(Politics.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]    
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]    
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -147,12 +147,12 @@ def sports_list(request):
     news = list(Sport.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -186,12 +186,12 @@ def movie_list(request):
     news = list(Movie.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -224,12 +224,12 @@ def business_list(request):
     news = list(Business.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -263,12 +263,12 @@ def election_list(request):
     news = list(Election.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
     page = request.GET.get('page',1)
 
     paginator = Paginator(news, 2)
@@ -303,12 +303,12 @@ def country_list(request):
     news = list(Country.objects.all())
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
-    queryset3 = list(News.objects.filter().order_by('-id'))[:1]
-    queryset4 = list(Politics.objects.filter().order_by('-id'))[:1]
-    queryset5 = list(Movie.objects.filter().order_by('-id'))[:1]
-    queryset6 = list(Sport.objects.filter().order_by('-id'))[:1]
-    queryset7 = list(Election.objects.filter().order_by('-id'))[:1]
-    queryset8 = list(Business.objects.filter().order_by('-id'))[:1]
+    queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
+    queryset4 = list(Politics.objects.filter().order_by('-id'))[:-1]
+    queryset5 = list(Movie.objects.filter().order_by('-id'))[:-1]
+    queryset6 = list(Sport.objects.filter().order_by('-id'))[:-1]
+    queryset7 = list(Election.objects.filter().order_by('-id'))[:-1]
+    queryset8 = list(Business.objects.filter().order_by('-id'))[:-1]
 
 
     page = request.GET.get('page',1)
