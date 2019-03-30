@@ -65,7 +65,7 @@ def top_news_list(request):
 
 #cateogory == news
 def news_list(request):
-    news = list(News.objects.all()))
+    news = list(News.objects.all().order_by('-id'))
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:1]
@@ -87,7 +87,7 @@ def news_list(request):
     
     except EmptyPage:
         news_list = paginator.page(paginator.num_pages)
-
+    
     context = {
         'news_list':news_list,
         'queryset0':queryset0,
