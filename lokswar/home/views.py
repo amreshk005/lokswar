@@ -183,7 +183,7 @@ def sports_list(request):
 # category == manoranjan
 
 def movie_list(request):
-    news = list(Movie.objects.all())
+    news = Movie.objects.all().order_by('-id')
     queryset0 = list(RecentNews.objects.all())
     queryset1 = list(PopluarPostNews.objects.all())
     queryset3 = list(News.objects.filter().order_by('-id'))[:-1]
