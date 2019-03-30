@@ -118,12 +118,12 @@
                             <!-- Single Featured Post -->
                             <div class="single-blog-post small-featured-post d-flex">
                                 <div class="post-thumb">
-                                    <a href="{{ item.get_absloute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
+                                    <a href="{{ item.get_absolute_url }}"><img style="height:90px;" src="{{ item.image.url }}" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="{% url 'home:movie' %}" class="post-catagory">मनोरंजन </a>
+                                    <a href="{% url 'home:politics' %}" class="post-catagory">मनोरंजन</a>
                                     <div class="post-meta">
-                                        <a href="{{ item.get_absloute_url }}" class="post-title">
+                                        <a href="{{ item.get_absolute_url }}" class="post-title">
                                             <h6>{{ item.title }}</h6>
                                         </a>
                                     <!-- AddToAny BEGIN -->
@@ -132,7 +132,7 @@
                                         <a class="a2a_button_facebook"></a>
                                         <a class="a2a_button_twitter"></a>
                                         <a class="a2a_button_whatsapp"></a>
-                                        </div>                                                                     
+                                        </div>                                                                    
                                         <p>{{ item.date }}</p>
                                     </div>
                                 </div>
